@@ -1,4 +1,4 @@
-import keras
+import tensorflow.keras
 import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib.gridspec import GridSpec
@@ -10,7 +10,7 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import matplotlib.animation as animation
 from IPython.display import clear_output
 from matplotlib.colors import ListedColormap
-from keras import backend as K
+from tensorflow.keras import backend as K
 import pickle
 import os
 import matplotlib.animation as animation
@@ -117,7 +117,7 @@ def make_animation(output_filename,surface_filename,logWeights,max_frames=100000
     ani = animation.FuncAnimation(fig, animate, frames=max_frames, repeat=True,save_count=50)
     ani.save(output_filename, writer=writer)
 
-class log_weights(keras.callbacks.Callback):
+class log_weights(tensorflow.keras.callbacks.Callback):
     """Callback that records events into a `History` object.
     This callback is automatically applied to
     every Keras model. The `History` object
